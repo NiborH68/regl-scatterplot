@@ -648,7 +648,7 @@ const createScatterplot = (
     let clostestPointIdx = -1;
     for (const pointIdx of pointsInBBox) {
       const [ptX, ptY] = points[pointIdx];
-      const d = dist(ptX, ptY, xNdc, yNdc);
+      const d = dist(ptX, ptY * dataAspectRatio, xNdc, yNdc * dataAspectRatio);
       if (d < minDist) {
         minDist = d;
         clostestPointIdx = pointIdx;
